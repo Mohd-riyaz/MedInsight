@@ -1,4 +1,3 @@
-# MedInsight
 # 🩺 MedInsight AI
 
 > **AI-Powered Clinical Decision Support System using Machine Learning and Explainable AI**
@@ -266,19 +265,6 @@ You can include screenshots of:
 - Heart Disease Prediction
 - SHAP Explainability
 - Analytics Dashboard
-
----
-
-# 🚀 Future Enhancements
-
-- AI Health Assistant
-- PDF Health Report Generation
-- Batch CSV Prediction
-- Prediction History
-- Cloud Deployment
-- Multi-language Support
-- Doctor Dashboard
-- Mobile Application
 
 ---
 
