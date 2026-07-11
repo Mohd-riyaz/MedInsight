@@ -1,10 +1,3 @@
-"""
-analytics/statistics.py — Data loading, KPI computation, and AI insights
-for the MedInsight AI Healthcare Analytics Dashboard.
-
-All dataset values are computed dynamically from the source files.
-"""
-
 import os
 import pandas as pd
 import streamlit as st
@@ -147,3 +140,93 @@ def get_ai_insights(
         f"📊 **Total combined records:** {total:,}",
     ]
     return insights
+# ---------------------------------------------------------------------------
+# Correlation Matrix
+# ---------------------------------------------------------------------------
+def get_correlation_matrix(df: pd.DataFrame) -> pd.DataFrame:
+    """Return correlation matrix for numeric columns."""
+    return df.corr(numeric_only=True)
+
+
+# ---------------------------------------------------------------------------
+# Numerical Statistics
+# ---------------------------------------------------------------------------
+def get_numeric_summary(df: pd.DataFrame) -> pd.DataFrame:
+    """Return descriptive statistics."""
+    return df.describe().T
+
+
+# ---------------------------------------------------------------------------
+# Class Distribution
+# ---------------------------------------------------------------------------
+def get_class_distribution(df: pd.DataFrame, target: str):
+    """Return target value counts."""
+    return df[target].value_counts()
+
+
+# ---------------------------------------------------------------------------
+# Missing Values
+# ---------------------------------------------------------------------------
+def get_missing_values(df: pd.DataFrame):
+    """Return missing value counts."""
+    return (
+        df.isnull()
+        .sum()
+        .sort_values(ascending=False)
+    )
+
+
+# ---------------------------------------------------------------------------
+# Feature List
+# ---------------------------------------------------------------------------
+def get_feature_columns(df: pd.DataFrame, target: str):
+    """Return feature columns only."""
+    return [
+        col
+        for col in df.columns
+        if col != target
+    ]
+
+
+# ---------------------------------------------------------------------------
+# Feature Statistics
+# ---------------------------------------------------------------------------
+def get_feature_statistics(df: pd.DataFrame, feature: str):
+    """Return statistics for a selected feature."""
+    return {
+        "Mean": round(df[feature].mean(), 2),
+        "Median": round(df[feature].median(), 2),
+        "Minimum": round(df[feature].min(), 2),
+        "Maximum": round(df[feature].max(), 2),
+        "Std Dev": round(df[feature].std(), 2),
+    }
+
+
+# ---------------------------------------------------------------------------
+# Dataset Health Score
+# ---------------------------------------------------------------------------
+def dataset_health_score(df: pd.DataFrame) -> int:
+    """
+    Return a simple dataset quality score (0–100).
+    """
+
+    score = 100
+
+    missing = df.isnull().sum().sum()
+    duplicates = df.duplicated().sum()
+
+    score -= missing * 0.1
+    score -= duplicates * 0.5
+
+    return max(0, min(100, round(score)))
+def get_target_variable(dataset_name: str) -> str:
+ 
+    return _TARGET_VARIABLES[dataset_name]
+
+def get_feature_count(df: pd.DataFrame, target: str) -> int:
+    """Return number of input features."""
+    return len(df.columns) - 1 if target in df.columns else len(df.columns)
+
+def get_dataset_size(df: pd.DataFrame):
+    """Return rows and columns."""
+    return df.shape

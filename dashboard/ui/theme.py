@@ -4,7 +4,7 @@ def load_css():
     st.markdown("""
     <style>
     /* =======================================================================
-       MedInsight AI Premium Theme — Global CSS
+       MedInsight Premium Theme — Global CSS
        ======================================================================= */
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 

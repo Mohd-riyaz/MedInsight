@@ -1,10 +1,4 @@
-"""
-analytics/charts.py — Interactive Plotly charts for the MedInsight AI
-Healthcare Analytics Dashboard.
 
-All charts use the existing dark-theme colour palette so they blend
-seamlessly with the landing page.
-"""
 
 import plotly.graph_objects as go
 
@@ -137,4 +131,133 @@ def create_accuracy_bar_chart(accuracies: dict[str, float]) -> go.Figure:
         height=380,
         bargap=0.35,
     )
+    return fig
+import plotly.express as px
+
+
+def create_histogram(df, feature):
+    """Histogram for a selected numeric feature."""
+
+    fig = px.histogram(
+        df,
+        x=feature,
+        nbins=30,
+        color_discrete_sequence=["#60a5fa"]
+    )
+
+    fig.update_layout(
+        title=f"{feature} Distribution",
+        paper_bgcolor=_PAPER_COLOR,
+        plot_bgcolor=_BG_COLOR,
+        font=dict(color=_FONT_COLOR),
+        xaxis_title=feature,
+        yaxis_title="Count",
+        height=400,
+    )
+
+    return fig
+
+def create_box_plot(df, feature):
+
+    fig = px.box(
+        df,
+        y=feature,
+        color_discrete_sequence=["#c084fc"]
+    )
+
+    fig.update_layout(
+        title=f"{feature} Box Plot",
+        paper_bgcolor=_PAPER_COLOR,
+        plot_bgcolor=_BG_COLOR,
+        font=dict(color=_FONT_COLOR),
+        height=400,
+    )
+
+    return fig
+
+def create_correlation_heatmap(corr):
+
+    fig = px.imshow(
+        corr,
+        text_auto=".2f",
+        aspect="auto",
+        color_continuous_scale="RdBu_r"
+    )
+
+    fig.update_layout(
+        title="Correlation Heatmap",
+        paper_bgcolor=_PAPER_COLOR,
+        plot_bgcolor=_BG_COLOR,
+        font=dict(color=_FONT_COLOR),
+        height=650,
+    )
+
+    return fig
+
+def create_missing_values_chart(missing):
+
+    missing = missing[missing > 0]
+
+    fig = px.bar(
+        x=missing.index,
+        y=missing.values,
+        color=missing.values,
+        color_continuous_scale="Reds"
+    )
+
+    fig.update_layout(
+        title="Missing Values",
+        paper_bgcolor=_PAPER_COLOR,
+        plot_bgcolor=_BG_COLOR,
+        font=dict(color=_FONT_COLOR),
+        xaxis_title="Feature",
+        yaxis_title="Missing",
+        height=350,
+    )
+
+    return fig
+
+def create_class_distribution(distribution):
+
+    fig = px.bar(
+        x=distribution.index.astype(str),
+        y=distribution.values,
+        color=distribution.values,
+        color_continuous_scale="Viridis"
+    )
+
+    fig.update_layout(
+        title="Target Class Distribution",
+        paper_bgcolor=_PAPER_COLOR,
+        plot_bgcolor=_BG_COLOR,
+        font=dict(color=_FONT_COLOR),
+        xaxis_title="Class",
+        yaxis_title="Count",
+        height=350,
+    )
+
+    return fig
+def create_feature_importance(feature_scores: dict):
+
+    names = list(feature_scores.keys())
+    values = list(feature_scores.values())
+
+    fig = px.bar(
+        x=values,
+        y=names,
+        orientation="h",
+        color=values,
+        color_continuous_scale="Turbo"
+    )
+
+    fig.update_layout(
+        title="Feature Importance",
+        paper_bgcolor=_PAPER_COLOR,
+        plot_bgcolor=_BG_COLOR,
+        font=dict(color=_FONT_COLOR),
+        xaxis_title="Importance",
+        yaxis_title="Feature",
+        height=450,
+    )
+
     return fig
