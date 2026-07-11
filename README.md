@@ -1,1 +1,301 @@
 # MedInsight
+# 🩺 MedInsight AI
+
+> **AI-Powered Clinical Decision Support System using Machine Learning and Explainable AI**
+
+MedInsight AI is an intelligent healthcare application designed to assist in the **early screening of Anemia, Diabetes, and Heart Disease**. The platform combines Machine Learning models with **Explainable AI (SHAP)** to provide transparent predictions, clinical interpretations, and personalized recommendations through an interactive Streamlit dashboard.
+
+---
+
+## 📌 Features
+
+### 🩸 Disease Prediction
+- Anemia Prediction
+- Diabetes Prediction
+- Heart Disease Prediction
+
+### 🔍 Explainable AI
+- SHAP Feature Importance
+- SHAP Waterfall Plot
+- Transparent model explanations
+
+### 📊 Analytics Dashboard
+- Dataset exploration
+- Feature distributions
+- Correlation heatmaps
+- Model performance visualization
+- Interactive charts
+
+### 💡 Clinical Insights
+- Risk level assessment
+- Clinical interpretation
+- Personalized health recommendations
+
+### 📈 Data Exploration
+- Dataset statistics
+- Feature analysis
+- Target distribution
+- Interactive visualizations
+
+---
+
+# 🚀 Application Workflow
+
+```text
+Patient Information
+        │
+        ▼
+Data Validation & Preprocessing
+        │
+        ▼
+Machine Learning Prediction
+        │
+        ▼
+Risk Analysis
+        │
+        ▼
+Explainable AI (SHAP)
+        │
+        ▼
+Clinical Interpretation
+        │
+        ▼
+Personalized Recommendations
+```
+
+---
+
+# 🧠 Machine Learning Models
+
+| Disease | Algorithm | Explainability |
+|----------|-----------|----------------|
+| Anemia | Random Forest | SHAP |
+| Diabetes | Random Forest | SHAP |
+| Heart Disease | Random Forest | SHAP |
+
+---
+
+# 📂 Project Structure
+
+```text
+MedInsight AI/
+│
+├── analytics/
+│   ├── charts.py
+│   └── statistics.py
+│
+├── dashboard/
+│   ├── app.py
+│   └── pages/
+│       ├── Analytics.py
+│       ├── Anemia.py
+│       ├── Diabetes.py
+│       ├── Heart.py
+│
+├── database/
+│   ├── db.py
+│   ├── services.py
+│   └── database.db
+│
+├── modules/
+│   ├── anemia/
+│   ├── diabetes/
+│   └── heart/
+│
+├── requirements.txt
+└── README.md
+```
+
+---
+
+# 💻 Technology Stack
+
+### Frontend
+- Streamlit
+
+### Backend
+- Python
+
+### Machine Learning
+- Scikit-learn
+
+### Explainable AI
+- SHAP
+
+### Data Processing
+- Pandas
+- NumPy
+
+### Visualization
+- Plotly
+- Matplotlib
+
+### Database
+- SQLite
+
+---
+
+# 📊 Supported Diseases
+
+### 🩸 Anemia
+Uses Complete Blood Count (CBC) parameters such as:
+- Hemoglobin (Hb)
+- RBC
+- PCV
+- MCV
+- MCH
+- MCHC
+
+Provides:
+- Prediction
+- Risk probability
+- Clinical interpretation
+- SHAP explanation
+- Personalized recommendations
+
+---
+
+### 🍬 Diabetes
+
+Uses clinical parameters including:
+- Pregnancies
+- Glucose
+- Blood Pressure
+- Skin Thickness
+- Insulin
+- BMI
+- Diabetes Pedigree Function
+- Age
+
+Provides:
+- Diabetes risk prediction
+- Risk probability
+- SHAP explanation
+- Lifestyle recommendations
+
+---
+
+### ❤️ Heart Disease
+
+Uses clinical parameters including:
+- Age
+- Sex
+- Chest Pain Type
+- Blood Pressure
+- Cholesterol
+- Fasting Blood Sugar
+- ECG
+- Maximum Heart Rate
+- Exercise Angina
+- Oldpeak
+- Slope
+- CA
+- Thal
+
+Provides:
+- Heart disease prediction
+- Risk assessment
+- SHAP explanation
+- Clinical interpretation
+
+---
+
+# 📈 Analytics Dashboard
+
+The Analytics Dashboard includes:
+
+- Dataset overview
+- Interactive charts
+- Dataset statistics
+- Correlation heatmaps
+- Feature distributions
+- Target class distribution
+- Model accuracy comparison
+- AI-generated insights
+
+---
+
+# 🔍 Explainable AI
+
+MedInsight AI integrates **SHAP (SHapley Additive exPlanations)** to improve transparency.
+
+Users can understand:
+
+- Which features influenced the prediction
+- Positive and negative feature contributions
+- Individual prediction explanations
+- Feature importance
+
+---
+
+# ⚙️ Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/Mohd-riyaz/MedInsight.git
+```
+
+Move into the project directory
+
+```bash
+cd MedInsight
+```
+
+Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the application
+
+```bash
+streamlit run dashboard/app.py
+```
+
+---
+
+# 📷 Screenshots
+
+You can include screenshots of:
+
+- Home Page
+- Anemia Prediction
+- Diabetes Prediction
+- Heart Disease Prediction
+- SHAP Explainability
+- Analytics Dashboard
+
+---
+
+# 🚀 Future Enhancements
+
+- AI Health Assistant
+- PDF Health Report Generation
+- Batch CSV Prediction
+- Prediction History
+- Cloud Deployment
+- Multi-language Support
+- Doctor Dashboard
+- Mobile Application
+
+---
+
+# 📄 License
+
+This project is intended for educational, research, and demonstration purposes.
+
+---
+
+# ⚠️ Medical Disclaimer
+
+MedInsight AI is designed for **educational and screening purposes only**.
+
+The predictions generated by this application are **not medical diagnoses** and should **not replace professional medical advice, diagnosis, or treatment**.
+
+Always consult a qualified healthcare professional regarding any medical concerns.
+
+---
+
+⭐ If you found this project useful, consider giving it a **Star** on GitHub!
