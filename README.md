@@ -228,7 +228,7 @@ Users can understand:
 ---
 
 ## 🔗 Live Demo
-https://your-streamlit-app.streamlit.app
+https://MedInsight1.streamlit.app
 
 # ⚙️ Installation
 
