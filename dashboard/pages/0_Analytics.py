@@ -9,14 +9,14 @@ PROJECT_ROOT = os.path.dirname(DASHBOARD_DIR)
 if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
 
-from analytics.statistics import (
+from analytics1.statistics import (
     load_all_datasets,
     get_kpi_summary,
     get_dataset_stats,
     get_ai_insights,
     MODEL_ACCURACIES
 )
-from analytics.charts import (
+from analytics1.charts import (
     create_pie_chart,
     create_accuracy_bar_chart
 )
@@ -83,4 +83,4 @@ st.markdown("<div class='section-title' style='text-align: left; font-size: 1.5r
 
 insights = get_ai_insights(datasets, MODEL_ACCURACIES)
 for insight in insights:
-    st.info(insight)
+    st.info(insight)

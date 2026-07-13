@@ -1,15 +1,19 @@
 """
-analytics/__init__.py — Public API for the analytics package.
+Public API for the analytics1 package.
 """
 
-from analytics.statistics import (
+from .statistics import (
     load_all_datasets,
     get_kpi_summary,
     get_dataset_stats,
     get_ai_insights,
     MODEL_ACCURACIES,
 )
-from analytics.charts import create_pie_chart, create_accuracy_bar_chart
+
+from .charts import (
+    create_pie_chart,
+    create_accuracy_bar_chart,
+)
 
 __all__ = [
     "load_all_datasets",
