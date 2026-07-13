@@ -227,6 +227,9 @@ Users can understand:
 
 ---
 
+## 🔗 Live Demo
+https://your-streamlit-app.streamlit.app
+
 # ⚙️ Installation
 
 Clone the repository
